@@ -1,0 +1,140 @@
+.nav-links
+	{
+		margin-left:15px;margin-top:10px;padding-top:20px; 		font-size:90%;
+	}
+	
+	.margintop-5
+	{
+		margin-top:5px
+	}
+	.margintop-10
+	{
+		margin-top:10px
+	}
+.margintop-20
+	{
+		margin-top:20px
+	}
+.margin-20
+	{
+		margin:20px
+	}
+.padding-20
+{
+padding-top:20px;
+padding-bottom:20px;
+}
+.activetab
+{
+background-color:#DCD1CF;
+}
+.tranfernow
+{
+text-transform: uppercase;
+}
+.regsuccess
+{
+text-transform: uppercase;
+}
+.green
+{
+color:green;	
+}
+
+.greybackground
+{
+background-color:#CBC2C0;
+}
+	.margintop-30
+	{
+		margin-top:30px
+	}
+.margintop-50
+	{
+		margin-top:50px
+	}
+.margintop-60
+	{
+		margin-top:60px
+	}
+	.marginbottom-60
+	{
+		margin-bottom:60px;
+	}
+.marginbottom-20
+	{
+		margin-bottom:20px;
+	}
+	.marginbottom-120
+	{
+		margin-bottom:120px;
+	}
+	.width-40
+	{
+	width:40%;
+	}
+	.red
+	{
+	color:red;
+	}
+	.maroon
+{
+color:rgb(192,0,0);
+}
+	.marginbottom-250
+	{
+		margin-bottom:250px;
+	}
+	.padding-3
+	{
+		padding:3px;
+	}
+	.padding-15
+	{
+		padding:15px;
+	}
+	.carousel-content
+	{
+		color:#643F3F;
+	}
+	.contact
+	{
+		background-color:#E5EDF5;
+	}
+	.about
+	{
+	background-color:white;
+	}
+	
+	.outerborder
+	{
+		border-radius:5px;
+		border:1px solid #CBC2C0;
+		
+	}
+
+	.padding-15
+	{
+		padding:15px;
+	}
+	.logo1
+	{
+		background-color: white;
+	}
+	.flightDetails
+	{
+	width:70%; margin:0 auto; margin-top:50px;margin-bottom:20px 
+	}
+	.reservation
+	{
+	width:70%; margin:0 auto; margin-top:50px;margin-bottom:20px;
+	}
+	.signup
+	{
+	width:50%;margin-top:20px;margin-bottom:20px;
+	}
+	footer 
+	{
+	background-color: #808080;
+		//padding-top: 5px;
+		color: #fff;}

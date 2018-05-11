@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+	<meta charset="UTF-8">
+
+	<title>Registration</title>
+	
+	 <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  	 <link rel="stylesheet" href="css/font-awesome.css" />
+	<link rel="stylesheet" href="css/newstyle.css" />
+	<link rel="stylesheet" href="css/responsive.css" />
+	<link rel="stylesheet" href="css/custom.css"/>
+	
+	 <script src="js/jquery.js"></script>
+	<script>
+
+$(
+	function () {
+			$('#registerbut').click(
+					
+				function () {
+					var jsonObj = {
+							"userName" : $('#custName').val(),
+							"permanentAddress" : $('#cust_permanentAdd').val(),
+							"password" : $('#custPassword').val(),
+							"email" : $('#custEmail').val(),
+							"depositAmount" : $('#balanceAmount').val(),
+							"phoneNo" : $('#custPhno').val()
+					}
+					var jsonObject = JSON.stringify(jsonObj);
+					
+					$.ajax({	
+						url : "http://localhost:8765/CRUD_App-0.0.1-SNAPSHOT/api/user/register",
+						method : "POST",
+						contentType : "application/json",
+						dataType : "text",
+						data : jsonObject
+					})
+					.done(
+						function (msg) {
+							if(msg=="success")
+								$('#fail').text("Registration Successfull")
+							else if(msg=="failure")
+								$('#fail').text("Registration Failed")
+						}
+					)
+					.fail(
+						function(jqXHR, msg) {
+							$('#fail').text(jqXHR + " " + msg);
+						}
+					);
+					return false;
+			}
+		  )				
+		}		
+	)
+
+</script>
+	
+
+	
+	
+	
+</head>
+<body data-spy="scroll" data-target="#footer">
+
+	
+	<!-- HEADER -->
+	<header id="header">
+
+    
+		<nav class="navbar st-navbar navbar-fixed-top" >
+		
+			<div class="container-fluid">
+		         <div class="navbar-header" >			 	
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#st-navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+				    	<span class="icon-bar"></span>
+				    	<span class="icon-bar"></span>
+				    	<span class="icon-bar"></span>
+					</button>
+					<a class="logo1"  href=""><img src="images/Logo.png" alt=""></a>
+	          </div>
+	        			
+			 	<div class="collapse navbar-collapse" id="st-navbar-collapse">
+			<div class="">
+					 
+						<ul class="nav navbar-nav navbar-right margintop-5" >
+											<li><a href="update.html"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Update Phone</a></li>					
+					
+						<li>  <a class="btn btn-xs  nav-links-right" href="register.html" >
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;Sign Up
+                  </a> </li>
+				        <li><a class="btn btn-xs nav-links-right" href="login.html">
+                        <span class="glyphicon glyphicon-log-in"></span>&nbsp;Login
+                  </a></li>   
+						 
+				 
+					</ul> 
+						  </div>
+				      
+	</div>  
+		</div><!-- /.navbar-collapse -->
+		</nav>
+
+     </header>
+	<!-- /HEADER --><br>
+
+	<!-- SIGNUP -->
+	<div class="row" >
+
+<div class="container signup" >
+
+<br><br><br>
+
+  <div class="panel panel-primary margintop-10">
+    <div class="panel-heading">
+	<h4>Registration </h4>
+	
+
+  </div>
+    <div class="panel-body">
+<form id="signup">
+
+<h3 class="red" id="msg"></h3>
+
+	<div class="form-group">
+		<div class="row">
+		<label class="control-label col-sm-4 text-right">Username*</label>
+		<div class="col-sm-7"><input type="text" name="custName" id="custName" class="form-control" required></div><br>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="row">
+		<label class="control-label col-sm-4 text-right">Password*</label>
+		<div class="col-sm-7"><input type="text" name="custPass" id="custPassword" class="form-control" required></div><br>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="row">
+		<label class="control-label col-sm-4 text-right">Email*</label>
+		<div class="col-sm-7"><input type="email" class="form-control" id="custEmail" required></div><br>
+		</div>
+    </div>
+	<div class="form-group">
+		<div class="row">
+		<label for="phone" class="control-label col-sm-4 text-right">Phone*</label>
+		<div class="col-sm-7"><input type="text" pattern="[0-9]{10}" class="form-control" id="custPhno" required></div><br>
+		</div>
+    </div>
+	<div class="form-group">
+		<div class="row">
+		<label for="phone" class="control-label col-sm-4 text-right">Permanent Address*</label>
+		<div class="col-sm-7"><textarea class="form-control" required name="cust_permanentAdd" id="cust_permanentAdd"></textarea></div><br>
+		</div>
+    </div>
+						  
+	<div class="form-group">
+		<div class="row">
+		<label class="control-label col-sm-4 text-right">Deposit Amount*</label>
+		<div class="col-sm-7"><input type="number" class="form-control" name="balanceAmount"  id="balanceAmount" required></div><br>
+		</div>
+    </div>
+	<br>
+	<div class="col-sm-offset-4 col-sm-2 text-left"> 
+		<input type="submit" id="registerbut" value="Register" class="btn btn-primary"></input> 		
+	</div>
+	<div class=" col-sm-2 text-left"> 
+		<input type="reset" id="reset" class="btn btn-danger"></input> 		
+	</div>
+	<br><br>
+	 <div  class="row" id="result"  >
+      <div class="col-sm-offset-4 col-sm-8">
+      
+      <!-- Display fail message in this header tag -->
+        <h4 id="fail"></h4>
+              
+        </div>
+	</div>
+	</form>
+	</div>
+  </div>
+ </div>
+  </div>
+	<!-- /SIGNUP -->
+
+<br><br><br><br><br><br><br>
+	<!-- FOOTER -->
+	<footer id="footer">
+		<div class="container">
+			
+			    <br>
+			    <div class="row">
+				<div class="col-sm-6 col-sm-push-6 footer-social-icons  " >
+					<span>Follow us:</span>
+					<a href=""><img src="images/fb.png"></img></a>
+					<a href=""><img src="images/gp.png"></img></a>
+					<a href=""><img src="images/yt.png"></img></a>
+					<a href=""><img src="images/t.png"></img></a>
+				</div>
+				<!-- /SOCIAL ICONS -->
+				
+				</div>
+			
+		</div>
+	</footer>
+	<!-- /FOOTER -->
+
+
+
+	
+</body>
+</html>
