@@ -8,13 +8,13 @@ robocopy "C:/Program Files/Go Agent/pipelines/test2/warTestDeploy/deployWar" "C:
 netstat -na | find "LISTENING" | find /C /I ":8765" > NUL
 IF %errorlevel%==0 (
 echo shutting down tomcat1
-net stop tomcat7
+net stop tomcat
 	timeout 3
 	echo starting tomcat
-net start tomcat7
+net start tomcat
 )ELSE (
 echo starting tomcat
-net start tomcat7
+net start tomcat
 
 )
 
